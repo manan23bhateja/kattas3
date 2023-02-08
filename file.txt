@@ -1,1 +1,202 @@
 this file
+
+//// kattas 3 ///
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Manan Bhateja/Desktop/kattas/kattas3/.git/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git add .
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git commit -m "first"
+[master (root-commit) 95974f4] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git branch mybranch
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git branch
+* master
+  mybranch
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ ls
+file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ touch manan.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ ls
+file.txt  manan.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ vi manan.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git add manan.txt
+warning: LF will be replaced by CRLF in manan.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git status
+On branch mybranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   manan.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git commit -m "second"
+[mybranch 8b039de] second
+ 1 file changed, 1 insertion(+)
+ create mode 100644 manan.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git log --oneline --graph
+* 8b039de (HEAD -> mybranch) second
+* 95974f4 (master) first
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git log --oneline
+8b039de (HEAD -> mybranch) second
+95974f4 (master) first
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git log --oneline --graph
+* 95974f4 (HEAD -> master) first
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ vi index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git add .
+warning: LF will be replaced by CRLF in index.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git commit -m "new file added"
+[master ea1cfdb] new file added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git log --oneline --graph
+* ea1cfdb (HEAD -> master) new file added
+* 95974f4 first
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ ls
+file.txt  manan.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git diff mybranch master
+diff --git a/index.txt b/index.txt
+new file mode 100644
+index 0000000..a7d9f1b
+--- /dev/null
++++ b/index.txt
+@@ -0,0 +1 @@
++this is indxe
+diff --git a/manan.txt b/manan.txt
+deleted file mode 100644
+index 6d948a1..0000000
+--- a/manan.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-manan this side
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git remote add origin git@github.com:manan23bhateja/kattas3.git^C
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git remote add origin git@github.com:manan23bhateja/kattas3.git
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git remote
+origin
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git push origin master
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 447 bytes | 111.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:manan23bhateja/kattas3.git
+ * [new branch]      master -> master
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$ git push origin mybranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 292 bytes | 146.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'mybranch' on GitHub by visiting:
+remote:      https://github.com/manan23bhateja/kattas3/pull/new/mybranch
+remote:
+To github.com:manan23bhateja/kattas3.git
+ * [new branch]      mybranch -> mybranch
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas3 (master)
+$
+
